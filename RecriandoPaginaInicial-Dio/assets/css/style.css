@@ -14,11 +14,11 @@ ul li a{
     text-decoration: none;
 }
 
-div img{
+/* div img{ 
     display: block;
     width: 100%;
 
-}
+} */
 
 
 .flex-turismoh1{
@@ -30,7 +30,11 @@ div img{
     max-width: 1400px;
     margin: auto;
     width: 100%;
+    
 }
+
+
+
 
 header{
     background-color: black;
@@ -96,16 +100,17 @@ header .menu{
 #slider img.selected {
     opacity: 1;
     
+    
 }
 
 
 
 .apresentacao{
     
-    height: 100vh;
+    height: 100%;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: rgb(30, 25, 44);
      
 }
@@ -113,6 +118,7 @@ header .menu{
 .apresentacao .texto-apresentacao{
     min-height: 200px;
 }
+
 .texto-apresentacao h1{
     color: #fff;
     font-size: 33px;
@@ -121,28 +127,53 @@ header .menu{
 
 .texto-apresentacao a{
     background-color: #cf195f;
+    display: block;
     color: #fff;
     text-align: center;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 14px;
     width: 200px;
     display: block;
     height: 40px;
     line-height: 40px;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin: 17px;
     text-decoration: none;
-    border: 5px double rgb(30, 25, 44);
-    padding: 1px ;
+    padding: 2px ;
+    border: 5px solid rgb(30, 25, 44);
+    position: relative;
+    /* transform: translateX(-505px); */
+    animation: toRight 3s linear;
+    
     
 }
 
+@keyframes toRight {
+    from {
+        
+        transform: translateX(-505px);
+    }
+    to {
+        transform: translateX(9);
+
+    }
+}
+
+.texto-apresentacao a::after {
+    content: "";
+    position: absolute;
+    left: calc(-0.5rem - 1px);
+    top: calc(-0.5rem - 1px);
+    width: calc(100% + 1rem);
+    height: calc(100% + 1rem);
+    border: 1px solid rgb(228, 16, 93);
+    border-radius: 30px;
+}
 .texto-apresentacao a:hover{
     background-color: rgb(255, 0, 119);
     border: 2px solid #fff;
     width: 200px;
-    border: 5px double rgb(30, 25, 44);
-    padding: 1px ;
+    border: 5px solid rgb(30, 25, 44);
+    
 
 }
 .texto-apresentacao p{
@@ -191,4 +222,24 @@ header .menu{
     color: #fff;
 }
 
+@media (max-width:750px) {
+    .apresentacao {
+        flex-direction: column;
+        
+    }
 
+    .texto-apresentacao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    
+
+    .bigImage {
+        width: 80%;
+    }
+
+}
